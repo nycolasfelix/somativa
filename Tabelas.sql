@@ -19,12 +19,12 @@ create table usuarios(
 id bigint not null auto_increment,
 nome varchar(150) not null,
 email varchar(150) not null,
-dataNascimento date not null,
+datadenascimento date not null,
 senha varchar(30) not null,
-dataCadastro datetime not null default now(),
+datadecadastro datetime not null default now(),
 ocupacaoFk bigint not null,
 status boolean not null default true,
-image_perfil mediumtext not null,
+imagemperfil mediumtext not null,
 primary key(id),
 foreign key(ocupacaoFk) references ocupacao(id)
 );
@@ -47,7 +47,7 @@ create table checkList(
 id bigint not null auto_increment,
 localFk bigint not null,
 itemFk bigint not null,
-qtd int not null default 1,
+quantidade int not null default 1,
 primary key(id),
 foreign key(localFk) references locais(id),
 foreign key(itemFk) references item(id)
@@ -86,10 +86,10 @@ foreign key (responsavel_fk) references usuarios(id)
 create table tarefa (
 id bigint not null auto_increment,
 titulo varchar(50) not null,
-descrisao varchar(500) not null,
+descricao varchar(500) not null,
 usuarioFk bigint not null,
 responsavel_fk bigint not null,
-prazo date not null,
+prazolimit date not null,
 locais_FK bigint not null,
 imagens mediumtext,
 primary key(id),
@@ -106,7 +106,7 @@ primary key(id)
 
 create table imagens_status (
 id bigint not null auto_increment,
-image mediumtext,
+imagem mediumtext,
 primary key(id)
 );
 
