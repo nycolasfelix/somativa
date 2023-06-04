@@ -1,7 +1,7 @@
 use formativaHogwarts;
 
 alter table usuarios
-ADD column foto_url varchar (1000) not null;
+add column foto varchar (1000) not null;
 
 alter table usuarios
 add column telefone varchar (30) not null;
@@ -14,9 +14,9 @@ create table usuarios(
     senha varchar(50) not null,
     data_de_Cadastro datetime default now(),
     status boolean default true,
-	  foto varchar(150),
+    foto varchar(150),
     telefone varchar(11),
-	  ocupacaoFK bigint not null,
+    ocupacaoFK bigint not null,
     primary key(id),
     foreign key(ocupacaoFK) references ocupacao(id)
 );
