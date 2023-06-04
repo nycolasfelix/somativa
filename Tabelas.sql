@@ -1,4 +1,4 @@
-use somativanycolas;
+use formativaHogwarts;
 
 create table nivelAcesso(
 id bigint not null auto_increment,
