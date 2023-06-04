@@ -132,5 +132,5 @@ inner join statustarefa as st on st.id = tf.statusFK
 where st.etapas = '1' and progressoFK = '4' 
 group by us.nome;
 
-select month(t.comeco_data) as mes, l.local_nome, count(t.tarefa_id) as total_tarefas from tarefas t 
+select month(t.datainicio) as mes, l.local_nome, count(t.tarefa_id) as total_tarefas from tarefa t 
 join locais l on t.localFK = l.id group by mes, l.local_nome;
